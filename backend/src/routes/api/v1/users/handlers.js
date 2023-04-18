@@ -1,3 +1,9 @@
+import { prisma } from "../../../../adapters";
+export async function getAllUsers(req, res) {
+    const allUsers = await prisma.user.findMany();
+    return res.json(allUsers);
+}
+/*
 export async function getAllUsers(req, res) {
     return res.json([
         {
@@ -7,3 +13,4 @@ export async function getAllUsers(req, res) {
         },
     ]);
 }
+*/
